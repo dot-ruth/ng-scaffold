@@ -1,6 +1,6 @@
-# Angular Boilerplate (`ng-boiler`)
+# Angular Project Scaffold (`ng-scaf`)
 
-A custom CLI tool to generate Angular projects with a clean folder structure and best practices
+A simple CLI tool to scaffold Angular projects with a clean, best-practice folder structure. Ideal for quickly setting up modular and maintainable Angular applications.
 
 ---
 
@@ -15,12 +15,12 @@ A custom CLI tool to generate Angular projects with a clean folder structure and
 ## Usage
 
 ```bash
-npm i -g ng-boilerplate-cli
+npm i -g ng-scaf
 
-ng-boiler <project-name> [options] 
+ng-scaf <project-name> [options] 
 
 # To create a project in your current directory
-ng-boiler . [options] 
+ng-scaf . [options] 
 ```
 ### Options
 | Option                    | Example                         | Description                                                     |

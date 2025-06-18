@@ -1,10 +1,10 @@
 {
-  "name": "ng-boilerplate-cli",
+  "name": "ng-scaf",
   "version": "1.0.0",
-  "description": "An npm cli to to generate a boilerplate code with following the predefined, best-practice folder structure for Angular projects",
+  "description": "A simple CLI tool to scaffold Angular projects with a clean, best-practice folder structure. Ideal for quickly setting up modular and maintainable Angular applications.",
   "main": "index.js",
   "bin": {
-    "ng-boiler": "./dist/cli.js"
+    "ng-scaf": "./dist/cli.js"
   },
   "scripts": {
      "build": "tsc",
