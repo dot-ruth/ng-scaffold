@@ -3,6 +3,7 @@
 import { execSync } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
+import { FolderStructure } from './constants';
 
 const args = process.argv.slice(2);
 
@@ -16,20 +17,7 @@ const cmd = args[0] === '.'
 
 execSync(cmd, { stdio: 'inherit' });
 
-const Folders: string[] = [
-  'core/services',
-  'core/guards',
-  'core/interceptors',
-  'shared/components',
-  'shared/directives',
-  'shared/pipes',
-  'features/dashboard',
-  'features/auth',
-  '../assests',
-  '../environments'
-];
-
-for (const folder of Folders ) {
+for (const folder of FolderStructure.folders ) {
   const fullPath = args[0] === '.'? path.join('src/app', folder) : path.join(projectName, 'src/app', folder);
   fs.mkdirSync(fullPath, { recursive: true });
 }

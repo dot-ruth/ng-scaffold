@@ -37,6 +37,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const child_process_1 = require("child_process");
 const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
+const constants_1 = require("./constants");
 const args = process.argv.slice(2);
 const projectName = args[0] === '.' ? path.basename(process.cwd()) : args[0];
 const additionalOptions = args.slice(1).join(' ');
@@ -44,19 +45,7 @@ const cmd = args[0] === '.'
     ? `npx @angular/cli new ${projectName} --directory . ${additionalOptions}`
     : `npx @angular/cli new ${projectName} ${additionalOptions}`;
 (0, child_process_1.execSync)(cmd, { stdio: 'inherit' });
-const Folders = [
-    'core/services',
-    'core/guards',
-    'core/interceptors',
-    'shared/components',
-    'shared/directives',
-    'shared/pipes',
-    'features/dashboard',
-    'features/auth',
-    '../assests',
-    '../environments'
-];
-for (const folder of Folders) {
+for (const folder of constants_1.FolderStructure.folders) {
     const fullPath = args[0] === '.' ? path.join('src/app', folder) : path.join(projectName, 'src/app', folder);
     fs.mkdirSync(fullPath, { recursive: true });
 }
